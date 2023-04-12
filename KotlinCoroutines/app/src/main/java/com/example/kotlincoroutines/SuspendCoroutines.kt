@@ -1,0 +1,22 @@
+package com.example.kotlincoroutines
+
+import android.provider.Settings.Global
+import kotlinx.coroutines.*
+
+fun main(){
+
+   runBlocking {
+       delay(2000)
+       println("run blocking")
+       myFunction()
+   }
+}
+
+suspend fun myFunction(){
+    coroutineScope {
+        delay(4000)
+        println("suspend function")
+    }
+
+
+}
